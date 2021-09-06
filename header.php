@@ -129,21 +129,7 @@ $res_logo = $db->getResult();
 
 <body class="hold-transition skin-blue fixed sidebar-mini">
     <div class="wrapper">
-        <?php
-        if ($time_check != $cal_time_check || empty($cal_time_check) || empty($time_check)) {
-            $file = basename($_SERVER['PHP_SELF']);
-            if ($file != 'purchase-code.php') { ?>
-                <div class="overlay" style="background: #000000d9; position: absolute; width: 100%; height: 307%; z-index: 9999999;">
-                    <div class="container text-center " style="background: white; padding: 100px; margin-top: 10%;">
-                        <div>
-                            <h4>Please activate the system use it further</h4>
-                            <a href="purchase-code.php"><i class="fa fa-check"></i> Register system</a>
-                        </div>
-                    </div>
-                </div>
-        <?php exit();
-            }
-        } ?>
+        
         <header class="main-header">
             <!-- Logo -->
             <a href="home.php" class="logo">
@@ -218,7 +204,7 @@ $res_logo = $db->getResult();
                     </a>
                 </li>
                 <li class="treeview">
-                    <a href="add-product.php">
+                    <a href="add-notification.php">
                         <i class="fa fa-bullhorn"></i>
                         <span>Send Notifications</span>
                     </a>

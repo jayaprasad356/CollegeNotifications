@@ -67,11 +67,11 @@ $res_logo = $db->getResult();
 	<div class='row'>
 		<div class="col-md-12 text-center">
 			<img src="<?= DOMAIN_URL . 'dist/img/' . $res_logo[0]['value'] ?>" height="110">
-			<h3><?= $settings['app_name'] ?> Dashboard</h3>
+			<!-- <h3><?= $settings['app_name'] ?> Dashboard</h3> -->
 		</div>
 		<div class="box box-info col-md-12">
 			<div class="box-header with-border">
-				<h3 class="box-title">Administrator Login</h3>
+				<h3 class="box-title">Staff Login</h3>
 				<center>
 					<div class="msg"><?php echo isset($error['failed']) ? $error['failed'] : ''; ?></div>
 				</center>
@@ -80,7 +80,7 @@ $res_logo = $db->getResult();
 			<form method="post" enctype="multipart/form-data">
 				<div class="box-body">
 					<div class="form-group">
-						<label for="exampleInputEmail1">Username :</label>
+						<label for="exampleInputEmail1">Staff ID :</label>
 						<input type="text" name="username" class="form-control"  required>
 					</div>
 					<div class="form-group">

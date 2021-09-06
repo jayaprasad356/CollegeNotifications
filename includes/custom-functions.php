@@ -201,6 +201,7 @@ class custom_functions
     }
     function rows_count($table, $field = '*', $where = '')
     {
+        
         // Total count
         if (!empty($where)) $where = "Where " . $where;
         $sql = "SELECT COUNT(" . $field . ") as total FROM " . $table . " " . $where;
@@ -208,6 +209,7 @@ class custom_functions
         $res = $this->db->getResult();
         foreach ($res as $row)
             return ($row['total'] != "") ? $row['total'] : 0;
+            
     }
 
     public function get_configurations()
