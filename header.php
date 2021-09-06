@@ -177,10 +177,10 @@ $res_logo = $db->getResult();
                                         </p>
                                     </li>
                                     <li class="user-footer">
-                                        <div class="pull-left">
+                                        <!-- <div class="pull-left invisible">
                                             <a href="admin-profile.php" class="btn btn-default btn-flat"> Edit Profile</a>
-                                        </div>
-                                        <div class="pull-right">
+                                        </div> -->
+                                        <div class="pull-left">
                                             <a href="logout.php" class="btn btn-default btn-flat">Log out</a>
                                         </div>
                                     </li>
