@@ -24,17 +24,19 @@ $db->sql("SET NAMES 'utf8'");
 	$_SESSION['timeout'] = $currentTime + $expired;
 
 	// print_r($_SESSION);
-	$sql_query = "SELECT * FROM admin where id=" . $_SESSION['id'];
+	$sql_query = "SELECT * FROM staff_details where staff_id=" . $_SESSION['id'];
 
 	$db->sql($sql_query);
 	$result = $db->getResult();
 	foreach ($result as $row) {
-		$user = $row['username'];
-		$email = $row['email'];
-		$profile = $row['profile'];
-		$sb = $row['student_batch'];
+		$user = $row['staff_fn'];
+		$email = $row['staff_work_email'];
+		// $profile = $row['profile'];
+		$profile = "https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg";
+		//$sb = $row['student_batch'];
+		$sb = "2018,2019,2020";
 	}
-	$sb =  explode(",",$row['student_batch']);
+	$sb =  explode(",","2018,2019,2020");
 	
 ?>
 <?php include"header.php";?>

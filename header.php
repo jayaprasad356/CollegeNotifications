@@ -153,14 +153,15 @@ $res_logo = $db->getResult();
                         <!-- User Account: style can be found in dropdown.less -->
                         <?php
                         // print_r($_SESSION);
-                        $sql_query = "SELECT * FROM admin where id=" . $_SESSION['id'];
+                        $sql_query = "SELECT * FROM staff_details where staff_id=" . $_SESSION['id'];
 
                         $db->sql($sql_query);
                         $result = $db->getResult();
                         foreach ($result as $row) {
-                            $user = $row['username'];
-                            $email = $row['email'];
-                            $profile = $row['profile'];
+                            $user = $row['staff_fn'];
+                            $email = $row['staff_work_email'];
+                            //$profile = $row['profile'];
+                            $profile = "https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg";
                         ?>
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">

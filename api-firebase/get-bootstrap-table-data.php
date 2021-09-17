@@ -1540,7 +1540,7 @@ if (isset($_GET['table']) && $_GET['table'] == 'system-users') {
         $search = $db->escapeString($fn->xss_clean($_GET['search']));
         $where = " Where `id` like '%" . $search . "%' OR `username` like '%" . $search . "%' OR `email` like '%" . $search . "%' OR `role` like '%" . $search . "%' OR `date_created` like '%" . $search . "%'";
     }
-    if ($_SESSION['role'] != 'super admin') {
+    if ($_SESSION['role'] != 'HOD') {
         if (empty($where)) {
             $condition .= ' where created_by=' . $_SESSION['id'];
         } else {
@@ -1570,14 +1570,14 @@ if (isset($_GET['table']) && $_GET['table'] == 'system-users') {
             $created_by = $db->getResult();
         }
 
-        if ($row['role'] != 'super admin') {
+        if ($row['role'] != 'HOD') {
             $operate = "<a class='btn btn-xs btn-primary edit-system-user' data-id='" . $row['id'] . "' data-toggle='modal' data-target='#editSystemUserModal' title='Edit'><i class='fa fa-pencil-square-o'></i></a>";
             $operate .= " <a class='btn btn-xs btn-danger delete-system-user' data-id='" . $row['id'] . "' title='Delete'><i class='fa fa-trash-o'></i></a>";
         } else {
             $operate = '';
         }
-        if ($row['role'] == 'super admin') {
-            $role = '<span class="label label-success">Super Admin</span>';
+        if ($row['role'] == 'HOD') {
+            $role = '<span class="label label-success">HOD</span>';
         }
         if ($row['role'] == 'admin') {
             $role = '<span class="label label-primary">Admin</span>';

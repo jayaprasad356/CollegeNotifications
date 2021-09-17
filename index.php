@@ -52,9 +52,72 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script>
+        function signin() {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithPopup(provider).then(function(result) {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+            
+            var email= user.email;
+            $.ajax
+          ({
+          type:'post',
+          url:'checklogin.php',
+          data:{
+          checklogin:"checklogin",
+          email:email
+          },
+          success:function(response) {
+            
+          if(response=="success")
+          {
+            window.location.href = './home.php';
+          }
+          else
+          {
+            
+            alert("Not Registered");
+          }
+          }
+          });
+            // ...
+            }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+            });
+          
+        }
+        
+      </script>
+      <script type="text/javascript">
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAKpRDunoIVj8A7p6DgJNuJj8VHPr_hBNE",
+        authDomain: "web-app-3fda2.firebaseapp.com",
+        databaseURL: "https://web-app-3fda2.firebaseio.com",
+        projectId: "web-app-3fda2",
+        storageBucket: "web-app-3fda2.appspot.com",
+        messagingSenderId: "414010710177",
+        appId: "1:414010710177:web:6498079a749baa1604f8e0",
+        measurementId: "G-SE41CE5P4B"
+        
+      };
+      firebase.initializeApp(config);
+    </script>
   </head>
 </body>
       <!-- Content Wrapper. Contains page content -->
-       <?php include 'public/login-form.php'; ?>
+       <?php include 'public/google-sign-in-form.php'; ?>
   </body>
 </html>

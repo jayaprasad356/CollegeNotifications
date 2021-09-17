@@ -24,7 +24,7 @@ if (isset($config['system_timezone']) && isset($config['system_timezone_gmt'])) 
     $db->sql("SET `time_zone` = '+05:30'");
 }
 if (empty($_POST['email'])) {
-    $response['success'] = true;
+    $response['success'] = false;
     $response['message'] = "Email should be filled!";
     print_r(json_encode($response));
     return false;
