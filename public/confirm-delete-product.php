@@ -16,7 +16,7 @@ $db->sql("SET NAMES 'utf8'");
             $sql_query = "DELETE FROM notifications WHERE id =" . $ID;
 	        $db->sql($sql_query);
             echo '<label class="alert alert-danger">Deleted Successfully.</label>';
-            header("location: view-notifications.php");
+            header("location: view-college-notifications.php");
             
             
             return false;

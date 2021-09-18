@@ -54,7 +54,7 @@ $db->sql("SET NAMES 'utf8'");
 </body>
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-        <?php include('public/add-product-form.php'); ?>
+        <?php include('public/add-college-notification-form.php'); ?>
       </div><!-- /.content-wrapper -->
   </body>
 </html>

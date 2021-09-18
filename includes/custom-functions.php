@@ -211,6 +211,30 @@ class custom_functions
             return ($row['total'] != "") ? $row['total'] : 0;
             
     }
+    function college_rows_count($table, $field = '*', $where = '')
+    {
+        
+        // Total count
+        if (!empty($where)) $where = "Where " . $where;
+        $sql = "SELECT COUNT(" . $field . ") as total FROM " . $table . " WHERE `category`='college'";
+        $this->db->sql($sql);
+        $res = $this->db->getResult();
+        foreach ($res as $row)
+            return ($row['total'] != "") ? $row['total'] : 0;
+            
+    }
+    function hostel_rows_count($table, $field = '*', $where = '')
+    {
+        
+        // Total count
+        if (!empty($where)) $where = "Where " . $where;
+        $sql = "SELECT COUNT(" . $field . ") as total FROM " . $table . " WHERE `category`='hostel' ";
+        $this->db->sql($sql);
+        $res = $this->db->getResult();
+        foreach ($res as $row)
+            return ($row['total'] != "") ? $row['total'] : 0;
+            
+    }
 
     public function get_configurations()
     {

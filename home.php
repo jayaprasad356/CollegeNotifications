@@ -53,19 +53,26 @@ $low_stock_limit = isset($config['low-stock-limit']) && (!empty($config['low-sto
                 <div class="col-lg-3 col-xs-6">
                     <div class="small-box bg-yellow">
                         <div class="inner">
-                            <h3><?= $function->rows_count('notifications', "id"); ?></h3>
-                            <p>Notifications</p>
+                            <h3><?= $function->college_rows_count('notifications', "id"); ?></h3>
+                            <p>College</p>
                         </div>
                         <div class="icon"><i class="fa fa-bell"></i></div>
-                        <a href="view-notifications.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="view-college-notifications.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-xs-6">
+                    <div class="small-box bg-blue">
+                        <div class="inner">
+                            <h3><?= $function->hostel_rows_count('notifications', "id"); ?></h3>
+                            <p>HOSTEL</p>
+                        </div>
+                        <div class="icon"><i class="fa fa-industry"></i></div>
+                        <a href="view-hostel-notifications.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 
+                
             </div>
-            
-
-
-
             
         </section>
         

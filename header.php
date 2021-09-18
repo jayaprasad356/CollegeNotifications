@@ -205,13 +205,13 @@ $res_logo = $db->getResult();
                     </a>
                 </li>
                 <li class="treeview">
-                    <a href="add-notification.php">
+                    <a href="add-college-notification.php">
                         <i class="fa fa-bullhorn"></i>
                         <span>Send Notifications</span>
                     </a>
                 </li>
                 <li class="treeview">
-                    <a href="view-notifications.php">
+                    <a href="view-college-notifications.php">
                         <i class="fa fa-bell-o"></i>
                         <span>View Notifications</span>
                     </a>

@@ -14,6 +14,7 @@ if (isset($_POST['btnAdd'])) {
         $title = $db->escapeString($fn->xss_clean($_POST['title']));
         $description = $db->escapeString($fn->xss_clean($_POST['description']));
         $meetlink = $db->escapeString($fn->xss_clean($_POST['meetlink']));
+        $category = 'hostel';
         
         // get image info
         $image = $db->escapeString($fn->xss_clean($_FILES['image']['name']));
@@ -70,7 +71,7 @@ if (isset($_POST['btnAdd'])) {
             $checkBox = implode(',', $_POST['batch']);
 
             // insert new data to product table
-            $sql = "INSERT INTO notifications (title,description,meetlink,image,batch) VALUES('$title','$description','$meetlink','$upload_image','$checkBox')";
+            $sql = "INSERT INTO notifications (title,description,meetlink,image,batch,category) VALUES('$title','$description','$meetlink','$upload_image','$checkBox','$category')";
             // echo $sql;
             $db->sql($sql);
             $product_result = $db->getResult();
@@ -84,7 +85,7 @@ if (isset($_POST['btnAdd'])) {
             if ($product_result == 1) {
                 $error['add_menu'] = "<section class='content-header'>
                                                 <span class='label label-success'>Notifications Send Successfully</span>
-                                                <h4><small><a  href='products.php'><i class='fa fa-angle-double-left'></i>&nbsp;&nbsp;&nbsp;Back to Products</a></small></h4>
+                                                <h4><small><a  href='view-hostel-notifications.php'><i class='fa fa-angle-double-left'></i>&nbsp;&nbsp;&nbsp;Back to Hostel - Notifications</a></small></h4>
                                                  </section>";
             } else {
                 $error['add_menu'] = " <span class='label label-danger'>Failed</span>";

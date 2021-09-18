@@ -37,7 +37,7 @@ $low_stock_limit = isset($config['low-stock-limit']) && (!empty($config['low-sto
 
    <!-- Content Wrapper. Contains page content -->
    <div class="content-wrapper">
-        <?php include('public/products-table.php'); ?>
+        <?php include('public/college-notifications-table.php'); ?>
     </div><!-- /.content-wrapper -->
     
     
